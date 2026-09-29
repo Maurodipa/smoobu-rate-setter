@@ -1,0 +1,4 @@
+# Dipendenze Python per smoobu_set_rate.py
+# Usa solo librerie standard + requests
+
+requests>=2.28.0

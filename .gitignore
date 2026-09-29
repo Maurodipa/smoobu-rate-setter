@@ -1,0 +1,33 @@
+# Smoobu API Rate Setter — .gitignore
+
+# Configurazioni locali con credenziali
+.env
+*.env
+config_local.py
+secrets.py
+
+# Caches Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Ambienti virtuali
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Log e output temporanei
+*.log
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
