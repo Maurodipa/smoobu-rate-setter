@@ -61,27 +61,35 @@ NEW_PRICE     = 150.00
 
 ## 🚀 Esecuzione
 
+### 1. Impostare/Aggiornare la tariffa giornaliera (POST)
 ```bash
 python smoobu_set_rate.py
 ```
 
-**Output di esempio (successo)**:
+### 2. Leggere le tariffe e la disponibilità per un appartamento (GET)
+```bash
+# Legge le tariffe per i prossimi 30 giorni (oppure specifica START_DATE ed END_DATE)
+python smoobu_get_rates.py
 ```
-============================================================
-SMOOBU — Impostazione tariffa giornaliera
-============================================================
+
+**Output di esempio (Lettura tariffe)**:
+```
+======================================================================
+SMOOBU — Lettura Tariffe Appartamento
+======================================================================
   Apartment ID  : 12345
-  Data          : 2026-11-15
-  Nuova tariffa : €150.00
-  Endpoint      : POST https://login.smoobu.com/api/rates
-  Timestamp     : 2026-09-29T23:30:00Z
-  Nonce         : 550e8400-e29b-41d4-a716-446655440000
-  Payload       : {"apartments":[12345],"operations":[{"dates":["2026-11-15"],"daily_price":150.0}]}
-------------------------------------------------------------
-  HTTP Status   : 200
-  Risposta raw  : {"success":true}
-============================================================
-✅ Tariffa aggiornata con successo!
+  Periodo       : Da 2026-10-01 a 2026-10-31
+  Endpoint      : GET https://login.smoobu.com/api/rates?apartments%5B%5D=12345&end_date=2026-10-31&start_date=2026-10-01
+----------------------------------------------------------------------
+
+📊 TARIFFE E DISPONIBILITÀ PER APPARTAMENTO 12345
+----------------------------------------------------------------------
+Data         | Prezzo (EUR) | Min Notti    | Disponibile 
+----------------------------------------------------------------------
+2026-10-01   | €140.00      | 2            | ✅ Sì        
+2026-10-02   | €140.00      | 2            | ✅ Sì        
+2026-10-03   | €180.00      | 3            | ❌ No        
+----------------------------------------------------------------------
 ```
 
 ---
